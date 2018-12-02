@@ -8,4 +8,5 @@
     <string name="something_went_wrong">Something went wrong, please check your network.</string>
     <string name="open_pr_requests">Open Pull Requests</string>
     <string name="owner_repo">owner/repo</string>
+    <string name="avatar">avatar</string>
 </resources>

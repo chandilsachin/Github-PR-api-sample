@@ -4,91 +4,98 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="viewModel"
-            type="io.github.chandilsachin.prapisample.modules.pr.PRViewModel" />
+                name="viewModel"
+                type="io.github.chandilsachin.prapisample.modules.pr.PRViewModel"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
 
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".modules.pr.PRActivity">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:context=".modules.pr.PRActivity">
 
 
         <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                app:title="@string/open_pr_requests"
-                app:titleTextColor="@android:color/white"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlways"
-                android:background="?attr/colorPrimary" />
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    app:title="@string/open_pr_requests"
+                    app:titleTextColor="@android:color/white"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    android:background="?attr/colorPrimary"/>
 
             <View
-                android:id="@+id/viewSeparator"
-                android:layout_width="match_parent"
-                android:background="#000000"
-                android:layout_height="1dp"/>
+                    android:id="@+id/viewSeparator"
+                    android:layout_width="match_parent"
+                    android:background="#000000"
+                    android:layout_height="1dp"/>
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
-                android:padding="4dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                    android:padding="4dp">
 
                 <Button
-                    android:id="@+id/btnSearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:onClick="@{() -> viewModel.onClickSearchButton(etRepoPath.getText().toString())}"
-                    android:text="@string/search"/>
+                        android:id="@+id/btnSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/search"/>
 
                 <EditText
-                    android:id="@+id/etRepoPath"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@id/btnSearch"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:hint="@string/owner_repo"
-                    android:inputType="text" />
+                        android:id="@+id/etRepoPath"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/btnSearch"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:hint="@string/owner_repo"
+                        android:inputType="text"/>
 
             </RelativeLayout>
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rvPrList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                        android:id="@+id/rvPrList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
                 <TextView
-                    android:id="@+id/tvMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:text="@{viewModel.message}"
-                    android:visibility="@{viewModel.messageVisibility}" />
+                        android:id="@+id/tvMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:padding="8dp"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:text="@{viewModel.message}"
+                        android:visibility="@{viewModel.messageVisibility}"/>
+
+                <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        loading="@{viewModel.loading}"
+                        android:indeterminate="true"/>
             </FrameLayout>
 
         </android.support.v4.widget.NestedScrollView>

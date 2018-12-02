@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class RemoteRepository @Inject constructor(private var githubService: GithubService) {
 
-    suspend fun fetchOpenPRs(owner: String, repo: String): List<PullRequest> {
-        return githubService.fetchPRs(owner, repo).await()
+    suspend fun fetchOpenPRs(owner: String, repo: String, page: Int, pageSize: Int): List<PullRequest> {
+        return githubService.fetchPRs(owner, repo, page, pageSize).await()
     }
 }
