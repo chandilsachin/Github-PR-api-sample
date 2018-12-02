@@ -8,6 +8,5 @@ data class PullRequest
     val number: Int,
     val status: String,
     val created_at: String,
-    val updated_at: String,
-    var page: Int
+    val updated_at: String
 )

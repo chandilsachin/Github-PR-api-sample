@@ -34,13 +34,6 @@ class PRActivity : AppCompatActivity() {
         mViewModel.toastMessageLiveData.observe(this, Observer {
             it?.let { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() }
         })
-
-        btnSearch.setOnClickListener {
-            mViewModel.onClickSearchButton(etRepoPath.text.toString())
-                .observe(this, Observer {
-                    adapter.
-                })
-        }
     }
 
     private fun initDataBinding() {

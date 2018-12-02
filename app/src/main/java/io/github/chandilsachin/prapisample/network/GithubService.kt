@@ -11,8 +11,6 @@ interface GithubService {
     @GET("repos/{owner}/{repo}/pulls")
     fun fetchPRs(
         @Path("owner") owner: String,
-        @Path("repo") repo: String,
-        @Query("page") page: Int,
-        @Query("per_page") perPage: Int
+        @Path("repo") repo: String
     ): Deferred<List<PullRequest>>
 }
