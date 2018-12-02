@@ -1,8 +1,13 @@
 package io.github.chandilsachin.prapisample.repositories
 
-class RemoteRepository {
+import io.github.chandilsachin.prapisample.modules.pr.PullRequest
+import io.github.chandilsachin.prapisample.network.GithubService
+import javax.inject.Inject
 
-    fun fetchOpenPRs() {
-        // TODO(fetch open PRs using retrofit)
+
+class RemoteRepository @Inject constructor(var githubService: GithubService) {
+
+    suspend fun fetchOpenPRs(owner: String, repo: String): List<PullRequest> {
+        return githubService.fetchPRs(owner, repo)
     }
 }

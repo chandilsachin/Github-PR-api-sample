@@ -1,4 +1,4 @@
-package io.github.chandilsachin.prapisample
+package io.github.chandilsachin.prapisample.modules.pr
 
 data class PullRequest(val id: Int,
                        val title: String,
