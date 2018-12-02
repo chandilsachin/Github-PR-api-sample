@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PR api sample</string>
+    <string name="search_pr_message">Search for pull request by typing "owner_name/repo_name".</string>
+    <string name="no_pr_message">There are no Pull requests for requested repository</string>
+    <string name="search">Search</string>
+    <string name="invalid_input">Invalid Input</string>
+    <string name="wrong_repo_path">Wrong repository path, please check.</string>
+    <string name="something_went_wrong">Something went wrong, please check your network.</string>
+    <string name="open_pr_requests">Open Pull Requests</string>
+    <string name="owner_repo">owner/repo</string>
 </resources>

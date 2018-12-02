@@ -51,6 +51,6 @@ class ApiModule {
     }
 
     companion object {
-        val BASE_PATH = "https://api.github.com"
+        val BASE_PATH = "https://api.github.com/"
     }
 }
